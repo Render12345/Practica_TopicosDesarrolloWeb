@@ -1,8 +1,8 @@
 <?php
 $host = "localhost";
 $db   = "sakila";
-$user = "usuario";
-$pass = "password";
+$user = "db_22030038";
+$pass = "22030038";
 
 try {
     $conexion = new PDO(
