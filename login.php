@@ -13,7 +13,7 @@ if ($_POST) {
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    if ($user && password_verify($password, $user['password'])) {
+    if ($user && $password === $user['password']) {
         $_SESSION['usuario'] = $user['username'];
         header("Location: dashboard.php");
         exit;
