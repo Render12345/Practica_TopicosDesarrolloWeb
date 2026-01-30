@@ -9,6 +9,7 @@ if ($_POST) {
         $_POST['last_name']
     ]);
     header("Location: listar.php");
+    exit;
 }
 ?>
 <form method="POST">

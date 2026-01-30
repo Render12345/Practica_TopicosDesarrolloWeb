@@ -16,6 +16,7 @@ if ($_POST) {
         $id
     ]);
     header("Location: listar.php");
+    exit;
 }
 ?>
 <form method="POST">

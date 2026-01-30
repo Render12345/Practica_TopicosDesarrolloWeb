@@ -16,6 +16,7 @@ if ($_POST) {
     if ($user && password_verify($password, $user['password'])) {
         $_SESSION['usuario'] = $user['usuario'];
         header("Location: dashboard.php");
+        exit;
     } else {
         $error = "Credenciales incorrectas";
     }
