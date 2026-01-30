@@ -6,7 +6,7 @@ if ($_POST) {
     $usuario = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM usuarios WHERE usuario = :usuario";
+    $sql = "SELECT * FROM staff WHERE username = :usuario";
     $stmt = $conexion->prepare($sql);
     $stmt->bindParam(":usuario", $usuario);
     $stmt->execute();
@@ -14,7 +14,7 @@ if ($_POST) {
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
     if ($user && password_verify($password, $user['password'])) {
-        $_SESSION['usuario'] = $user['usuario'];
+        $_SESSION['usuario'] = $user['username'];
         header("Location: dashboard.php");
         exit;
     } else {
