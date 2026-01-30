@@ -3,12 +3,12 @@ session_start();
 require "config/conexion.php";
 
 if ($_POST) {
-    $usuario = $_POST['usuario'];
+    $username = $_POST['usuario'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM staff WHERE username = :usuario";
+    $sql = "SELECT * FROM staff WHERE username = :username";
     $stmt = $conexion->prepare($sql);
-    $stmt->bindParam(":usuario", $usuario);
+    $stmt->bindParam(":username", $username);
     $stmt->execute();
 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
